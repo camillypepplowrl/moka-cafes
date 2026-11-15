@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Moka - Contato -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulário de contato da Moka Cafés.">
+    <meta name="author" content="Camilly Victoria Ribeiro Pepplow Lopes">
+    <title>Contato | Moka Cafés</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <header>
+        <div class="barra">
+            <a class="marca" href="index.html"><img src="img/logo-moka.svg" alt="" width="34" height="34"><span>moka</span></a>
+            <button type="button" id="botao-menu">☰</button>
+            <nav id="menu-principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="pedido.html">Pedido <span id="contador-sacola">0</span></a></li>
+                    <li><a href="loja.html">Nossa loja</a></li>
+                    <li><a href="contato.html" class="ativo">Contato</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h1>Contato</h1>
+        <p>Tem alguma dúvida, sugestão ou elogio? Envie uma mensagem.</p>
+
+        <form class="formulario" id="form-contato" novalidate>
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" required minlength="3" pattern="[A-Za-zÀ-ÿ ]{3,}" placeholder="Seu nome completo">
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" required placeholder="voce@exemplo.com">
+
+            <label for="assunto">Assunto</label>
+            <select id="assunto" required>
+                <option value="">Selecione...</option>
+                <option>Dúvida sobre pedido</option>
+                <option>Problema na entrega</option>
+                <option>Sugestão</option>
+                <option>Elogio</option>
+            </select>
+
+            <label for="mensagem">Mensagem (<span id="restante">300</span> caracteres restantes)</label>
+            <textarea id="mensagem" rows="5" required minlength="10" maxlength="300" placeholder="Escreva pelo menos 10 caracteres"></textarea>
+
+            <p class="aviso" id="aviso"></p>
+
+            <input type="submit" class="botao" value="Enviar mensagem">
+        </form>
+
+        <h2 class="titulo-secao">Mensagens enviadas</h2>
+        <p id="sem-mensagens">Nenhuma mensagem enviada ainda.</p>
+        <ul id="lista-mensagens"></ul>
+
+        <template id="modelo-mensagem">
+            <li>
+                <strong class="nome"></strong> (<span class="assunto"></span>) - <span class="data"></span>
+                <p class="texto"></p>
+            </li>
+        </template>
+
+        <button type="button" class="botao secundario" id="limpar-mensagens">Apagar mensagens</button>
+
+    </main>
+
+    <footer>
+        <div class="rodape-colunas">
+            <div>
+                <h2>Moka Cafés</h2>
+                <p>Café, bebidas geladas e padaria. Peça na loja ou receba em casa.</p>
+            </div>
+            <div>
+                <h2>Navegue</h2>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="pedido.html">Pedido</a></li>
+                    <li><a href="loja.html">Nossa loja</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Horário</h2>
+                <p>Seg a sex: 7h às 21h<br>Sáb e dom: 8h às 20h</p>
+            </div>
+        </div>
+        <p>&copy; <span class="ano-atual">2026</span> Moka Cafés · Projeto acadêmico - Universidade Positivo · Camilly Victoria Ribeiro Pepplow Lopes · Fotos e vídeo: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+    </footer>
+
+    <script src="js/comum.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/contato.js"></script>
+</body>
+</html>

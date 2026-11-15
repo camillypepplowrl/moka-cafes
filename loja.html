@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- Moka - Nossa loja -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="História, vídeo, áudio e galeria da cafeteria Moka.">
+    <meta name="author" content="Camilly Victoria Ribeiro Pepplow Lopes">
+    <title>Nossa loja | Moka Cafés</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        .galeria figcaption {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="barra">
+            <a class="marca" href="index.html"><img src="img/logo-moka.svg" alt="" width="34" height="34"><span>moka</span></a>
+            <button type="button" id="botao-menu">☰</button>
+            <nav id="menu-principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="pedido.html">Pedido <span id="contador-sacola">0</span></a></li>
+                    <li><a href="loja.html" class="ativo">Nossa loja</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h1>Nossa loja</h1>
+
+        <div class="duas-colunas">
+            <div>
+                <p>A Moka é uma cafeteria de Curitiba. Servimos café, bebidas geladas e produtos de padaria, no balcão da loja e por delivery.</p>
+                <p>Também vendemos café em grãos para levar para casa. A entrega é feita em alguns bairros da cidade, e você também pode retirar o pedido na loja.</p>
+                <h2>Horário de funcionamento</h2>
+                <ul>
+                    <li>Segunda a sexta: 7h às 21h</li>
+                    <li>Sábados e domingos: 8h às 20h</li>
+                    <li>Endereço: Rua XV de Novembro, 1000 - Centro, Curitiba - PR</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Vídeo da loja</h2>
+                <video controls poster="img/poster-loja.jpg">
+                    <source src="video/produtos-e-loja.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
+                </video>
+                <h2>Música ambiente</h2>
+                <audio controls loop>
+                    <source src="audio/musica-ambiente.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                </audio>
+            </div>
+        </div>
+
+        <h2 class="titulo-secao">Galeria</h2>
+        <section class="galeria">
+            <figure><img src="img/hero.jpg" alt="Nosso balcão"><figcaption>Nosso balcão</figcaption></figure>
+            <figure><img src="img/moedor.jpg" alt="Moedor e máquina de espresso"><figcaption>Moedor e máquina de espresso</figcaption></figure>
+            <figure><img src="img/cappuccino.jpg" alt="Cappuccino"><figcaption>Cappuccino</figcaption></figure>
+            <figure><img src="img/croissant.jpg" alt="Croissant"><figcaption>Croissant</figcaption></figure>
+            <figure><img src="img/cold-brew.jpg" alt="Cold Brew"><figcaption>Cold Brew</figcaption></figure>
+            <figure><img src="img/blend-moka.jpg" alt="Blend Moka"><figcaption>Blend Moka</figcaption></figure>
+            <figure><img src="img/graos.jpg" alt="Grãos de café"><figcaption>Grãos de café</figcaption></figure>
+            <figure><img src="img/cafezal.jpg" alt="Frutos do café no pé"><figcaption>Frutos do café no pé</figcaption></figure>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="rodape-colunas">
+            <div>
+                <h2>Moka Cafés</h2>
+                <p>Café, bebidas geladas e padaria. Peça na loja ou receba em casa.</p>
+            </div>
+            <div>
+                <h2>Navegue</h2>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="cardapio.html">Cardápio</a></li>
+                    <li><a href="pedido.html">Pedido</a></li>
+                    <li><a href="loja.html">Nossa loja</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Horário</h2>
+                <p>Seg a sex: 7h às 21h<br>Sáb e dom: 8h às 20h</p>
+            </div>
+        </div>
+        <p>&copy; <span class="ano-atual">2026</span> Moka Cafés · Projeto acadêmico - Universidade Positivo · Camilly Victoria Ribeiro Pepplow Lopes · Fotos e vídeo: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+    </footer>
+
+    <script src="js/comum.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/loja.js"></script>
+</body>
+</html>

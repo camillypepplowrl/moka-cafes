@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Moka - Pedido -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sacola, entrega e pagamento do seu pedido.">
+    <meta name="author" content="Camilly Victoria Ribeiro Pepplow Lopes">
+    <title>Pedido | Moka Cafés</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-moka">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="img/logo-moka.svg" alt="" width="34" height="34"><span>moka</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="pedido.html">Pedido <span id="contador-sacola">0</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="loja.html">Nossa loja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+
+        <h1>Meu pedido</h1>
+
+        <div class="dois-lados">
+
+            <div>
+                <h2>Sacola</h2>
+                <div class="alert alert-moka" id="sacola-vazia">
+                    Sua sacola está vazia. Visite o <a href="cardapio.html" class="alert-link">cardápio</a> e adicione itens.
+                </div>
+                <ul class="lista-simples" id="lista-sacola"></ul>
+
+                <template id="modelo-item-sacola">
+                    <li class="item-sacola">
+                        <img class="foto" src="" alt="">
+                        <div class="info">
+                            <h3 class="nome"></h3>
+                            <small class="detalhe"></small>
+                        </div>
+                        <div class="quantidade">
+                            <button type="button" class="btn btn-outline-dark btn-sm menos">−</button>
+                            <strong class="qtd"></strong>
+                            <button type="button" class="btn btn-outline-dark btn-sm mais">+</button>
+                        </div>
+                        <strong class="subtotal"></strong>
+                    </li>
+                </template>
+
+                <ul class="lista-simples" id="resumo">
+                    <li><span>Produtos</span><span id="r-subtotal">R$ 0,00</span></li>
+                    <li><span>Entrega</span><span id="r-entrega">R$ 0,00</span></li>
+                    <li><span>Total</span><span id="r-total">R$ 0,00</span></li>
+                </ul>
+                <button type="button" class="btn btn-outline-dark" id="esvaziar">Esvaziar sacola</button>
+            </div>
+
+            <div>
+                <h2>Entrega e pagamento</h2>
+                <form class="card card-moka" id="form-pedido" novalidate>
+
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control mb-3" id="nome" required minlength="3" pattern="[A-Za-zÀ-ÿ ]{3,}" placeholder="Seu nome completo">
+
+                    <label for="telefone" class="form-label">Telefone (só números, com DDD)</label>
+                    <input type="text" class="form-control mb-3" id="telefone" required pattern="[0-9]{10,11}" placeholder="41999999999">
+
+                    <label for="bairro" class="form-label">Entrega</label>
+                    <select class="form-select mb-3" id="bairro" required>
+                        <option value="" data-taxa="0">Selecione...</option>
+                        <option value="Retirada na loja" data-taxa="0">Retirada na loja (grátis)</option>
+                        <option value="Centro" data-taxa="6">Centro (R$ 6,00)</option>
+                        <option value="Batel" data-taxa="7">Batel (R$ 7,00)</option>
+                        <option value="Água Verde" data-taxa="8">Água Verde (R$ 8,00)</option>
+                        <option value="Portão" data-taxa="9">Portão (R$ 9,00)</option>
+                        <option value="Santa Felicidade" data-taxa="12">Santa Felicidade (R$ 12,00)</option>
+                    </select>
+
+                    <label for="endereco" class="form-label">Endereço (rua e número)</label>
+                    <input type="text" class="form-control mb-3" id="endereco" required minlength="5" placeholder="Rua das Flores, 123">
+
+                    <label for="pagamento" class="form-label">Pagamento na entrega</label>
+                    <select class="form-select mb-3" id="pagamento" required>
+                        <option value="">Selecione...</option>
+                        <option>Pix</option>
+                        <option>Cartão de crédito</option>
+                        <option>Cartão de débito</option>
+                        <option>Dinheiro</option>
+                    </select>
+
+                    <label for="observacoes" class="form-label">Observações</label>
+                    <textarea class="form-control mb-3" id="observacoes" rows="3" maxlength="200" placeholder="Ex.: sem açúcar, tocar a campainha"></textarea>
+
+                    <div id="aviso-pedido"></div>
+                    <button type="submit" class="btn btn-dark btn-lg mt-3">Finalizar pedido</button>
+                </form>
+            </div>
+
+        </div>
+
+        <h2 class="titulo-secao">Pedidos anteriores</h2>
+        <p class="alert alert-moka" id="sem-pedidos">Você ainda não fez nenhum pedido.</p>
+        <ul class="lista-simples" id="lista-pedidos"></ul>
+
+        <template id="modelo-pedido">
+            <li>
+                <strong class="numero"></strong> - <span class="data"></span><br>
+                <span class="itens"></span><br>
+                <span class="entrega"></span> · <strong class="total"></strong>
+            </li>
+        </template>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-colunas">
+                <div>
+                    <h2>Moka Cafés</h2>
+                    <p>Café, bebidas geladas e padaria. Peça na loja ou receba em casa.</p>
+                </div>
+                <div>
+                    <h2>Navegue</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="pedido.html">Pedido</a></li>
+                        <li><a href="loja.html">Nossa loja</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Horário</h2>
+                    <p>Seg a sex: 7h às 21h<br>Sáb e dom: 8h às 20h</p>
+                </div>
+            </div>
+            <p class="text-center small">&copy; <span class="ano-atual">2026</span> Moka Cafés · Projeto acadêmico - Universidade Positivo · Camilly Victoria Ribeiro Pepplow Lopes · Fotos e vídeo: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/pedido.js"></script>
+</body>
+</html>

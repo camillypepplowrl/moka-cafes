@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- Moka - Cardapio -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cardápio de cafés, gelados, grãos e padaria.">
+    <meta name="author" content="Camilly Victoria Ribeiro Pepplow Lopes">
+    <title>Cardápio | Moka Cafés</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-moka">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="img/logo-moka.svg" alt="" width="34" height="34"><span>moka</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="cardapio.html">Cardápio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pedido.html">Pedido <span id="contador-sacola">0</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="loja.html">Nossa loja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+
+        <h1>Cardápio</h1>
+        <p class="dica">Escolha a categoria, ajuste o tamanho e adicione ao pedido.</p>
+
+        <div id="abas">
+            <button type="button" class="btn btn-outline-dark ativa" data-cat="todas">Todos</button>
+            <button type="button" class="btn btn-outline-dark" data-cat="quentes">Quentes</button>
+            <button type="button" class="btn btn-outline-dark" data-cat="gelados">Gelados</button>
+            <button type="button" class="btn btn-outline-dark" data-cat="graos">Grãos e café em casa</button>
+            <button type="button" class="btn btn-outline-dark" data-cat="padaria">Padaria</button>
+        </div>
+
+        <form id="form-busca" onsubmit="return false">
+            <label for="busca-produto" class="form-label">Buscar no cardápio</label>
+            <input type="text" class="form-control" id="busca-produto" placeholder="Ex.: cappuccino">
+        </form>
+
+        <ul class="grade" id="lista-produtos">
+            <li data-id="1" data-nome="Espresso" data-categoria="quentes" data-preco="8" data-imagem="img/espresso.jpg">
+                <article class="card card-moka">
+                    <img src="img/espresso.jpg" class="card-img-top" alt="Espresso">
+                    <div class="card-body">
+                        <h3 class="card-title">Espresso</h3>
+                        <p class="card-text">Café curto e forte, feito com o blend Moka.</p>
+                        <p class="preco">a partir de R$ 8,00</p>
+                        <label for="tam-1" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-1" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 8,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 11,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 13,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="1">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="2" data-nome="Cappuccino" data-categoria="quentes" data-preco="14" data-imagem="img/cappuccino.jpg">
+                <article class="card card-moka">
+                    <img src="img/cappuccino.jpg" class="card-img-top" alt="Cappuccino">
+                    <div class="card-body">
+                        <h3 class="card-title">Cappuccino</h3>
+                        <p class="card-text">Espresso com leite vaporizado e espuma.</p>
+                        <p class="preco">a partir de R$ 14,00</p>
+                        <label for="tam-2" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-2" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 14,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 17,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 19,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="2">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="3" data-nome="Latte" data-categoria="quentes" data-preco="15" data-imagem="img/latte.jpg">
+                <article class="card card-moka">
+                    <img src="img/latte.jpg" class="card-img-top" alt="Latte">
+                    <div class="card-body">
+                        <h3 class="card-title">Latte</h3>
+                        <p class="card-text">Espresso com bastante leite vaporizado.</p>
+                        <p class="preco">a partir de R$ 15,00</p>
+                        <label for="tam-3" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-3" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 15,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 18,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 20,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="3">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="4" data-nome="Mocha" data-categoria="quentes" data-preco="17" data-imagem="img/mocha.jpg">
+                <article class="card card-moka">
+                    <img src="img/mocha.jpg" class="card-img-top" alt="Mocha">
+                    <div class="card-body">
+                        <h3 class="card-title">Mocha</h3>
+                        <p class="card-text">Espresso com chocolate e leite, coberto com chantilly e calda de chocolate.</p>
+                        <p class="preco">a partir de R$ 17,00</p>
+                        <label for="tam-4" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-4" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 17,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 20,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 22,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="4">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="5" data-nome="Cold Brew" data-categoria="gelados" data-preco="16" data-imagem="img/cold-brew.jpg">
+                <article class="card card-moka">
+                    <img src="img/cold-brew.jpg" class="card-img-top" alt="Cold Brew">
+                    <div class="card-body">
+                        <h3 class="card-title">Cold Brew</h3>
+                        <p class="card-text">Café coado a frio, servido com gelo.</p>
+                        <p class="preco">a partir de R$ 16,00</p>
+                        <label for="tam-5" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-5" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 16,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 19,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 21,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="5">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="6" data-nome="Frappé de Banana" data-categoria="gelados" data-preco="21" data-imagem="img/frappe.jpg">
+                <article class="card card-moka">
+                    <img src="img/frappe.jpg" class="card-img-top" alt="Frappé de Banana">
+                    <div class="card-body">
+                        <h3 class="card-title">Frappé de Banana</h3>
+                        <p class="card-text">Café gelado com chantilly e fatias de banana.</p>
+                        <p class="preco">a partir de R$ 21,00</p>
+                        <label for="tam-6" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-6" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 21,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 24,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 26,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="6">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="7" data-nome="Espresso Gelado" data-categoria="gelados" data-preco="17" data-imagem="img/latte-gelado.jpg">
+                <article class="card card-moka">
+                    <img src="img/latte-gelado.jpg" class="card-img-top" alt="Espresso Gelado">
+                    <div class="card-body">
+                        <h3 class="card-title">Espresso Gelado</h3>
+                        <p class="card-text">Espresso servido com gelo.</p>
+                        <p class="preco">a partir de R$ 17,00</p>
+                        <label for="tam-7" class="form-label rotulo-tam">Tamanho</label>
+                        <select id="tam-7" class="form-select mb-3">
+                            <option value="Pequeno" data-adicional="0">Pequeno (355 ml) - R$ 17,00</option>
+                            <option value="Médio" data-adicional="3">Médio (473 ml) - R$ 20,00</option>
+                            <option value="Grande" data-adicional="5">Grande (591 ml) - R$ 22,00</option>
+                        </select>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="7">Adicionar ao pedido</button>
+                        <a href="#tabela-tamanhos" class="mt-2">Ver tabela de tamanhos</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="8" data-nome="Blend Moka 250 g" data-categoria="graos" data-preco="42" data-imagem="img/blend-moka.jpg">
+                <article class="card card-moka">
+                    <img src="img/blend-moka.jpg" class="card-img-top" alt="Blend Moka 250 g">
+                    <div class="card-body">
+                        <h3 class="card-title">Blend Moka 250 g</h3>
+                        <p class="card-text">Café em grãos torrados, pacote de 250 g.</p>
+                        <p class="preco">R$ 42,00</p>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="8">Adicionar ao pedido</button>
+                        <a href="pedido.html" class="mt-2">Ir para o pedido</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="9" data-nome="Café Coado" data-categoria="quentes" data-preco="7" data-imagem="img/drip-bag.jpg">
+                <article class="card card-moka">
+                    <img src="img/drip-bag.jpg" class="card-img-top" alt="Café Coado">
+                    <div class="card-body">
+                        <h3 class="card-title">Café Coado</h3>
+                        <p class="card-text">Café preto coado, servido na xícara.</p>
+                        <p class="preco">R$ 7,00</p>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="9">Adicionar ao pedido</button>
+                        <a href="pedido.html" class="mt-2">Ir para o pedido</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="10" data-nome="Croissant de Manteiga" data-categoria="padaria" data-preco="11" data-imagem="img/croissant.jpg">
+                <article class="card card-moka">
+                    <img src="img/croissant.jpg" class="card-img-top" alt="Croissant de Manteiga">
+                    <div class="card-body">
+                        <h3 class="card-title">Croissant de Manteiga</h3>
+                        <p class="card-text">Croissant de manteiga, crocante por fora e macio por dentro.</p>
+                        <p class="preco">R$ 11,00</p>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="10">Adicionar ao pedido</button>
+                        <a href="pedido.html" class="mt-2">Ir para o pedido</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="11" data-nome="Brioche Folhado" data-categoria="padaria" data-preco="12" data-imagem="img/brioche.jpg">
+                <article class="card card-moka">
+                    <img src="img/brioche.jpg" class="card-img-top" alt="Brioche Folhado">
+                    <div class="card-body">
+                        <h3 class="card-title">Brioche Folhado</h3>
+                        <p class="card-text">Pão folhado de massa amanteigada.</p>
+                        <p class="preco">R$ 12,00</p>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="11">Adicionar ao pedido</button>
+                        <a href="pedido.html" class="mt-2">Ir para o pedido</a>
+                    </div>
+                </article>
+            </li>
+            <li data-id="12" data-nome="Bolo de Cenoura" data-categoria="padaria" data-preco="13" data-imagem="img/bolo-cenoura.jpg">
+                <article class="card card-moka">
+                    <img src="img/bolo-cenoura.jpg" class="card-img-top" alt="Bolo de Cenoura">
+                    <div class="card-body">
+                        <h3 class="card-title">Bolo de Cenoura</h3>
+                        <p class="card-text">Fatia de bolo de cenoura com cobertura branca.</p>
+                        <p class="preco">R$ 13,00</p>
+                        <button type="button" class="btn btn-dark btn-sm btn-add" data-id="12">Adicionar ao pedido</button>
+                        <a href="pedido.html" class="mt-2">Ir para o pedido</a>
+                    </div>
+                </article>
+            </li>
+        </ul>
+        <div class="alert alert-danger" id="sem-resultado" hidden>Nenhum item encontrado.</div>
+
+        <h2 class="titulo-secao">Tamanhos e preços das bebidas</h2>
+        <div class="table-responsive">
+            <table class="table table-hover tabela-moka" id="tabela-tamanhos">
+                <caption>Preço de cada bebida por tamanho.</caption>
+                <thead>
+                    <tr>
+                        <th>Bebida</th>
+                        <th>Pequeno (355 ml)</th>
+                        <th>Médio (473 ml)</th>
+                        <th>Grande (591 ml)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th>Espresso</th><td>R$ 8,00</td><td>R$ 11,00</td><td>R$ 13,00</td></tr>
+                    <tr><th>Cappuccino</th><td>R$ 14,00</td><td>R$ 17,00</td><td>R$ 19,00</td></tr>
+                    <tr><th>Latte</th><td>R$ 15,00</td><td>R$ 18,00</td><td>R$ 20,00</td></tr>
+                    <tr><th>Mocha</th><td>R$ 17,00</td><td>R$ 20,00</td><td>R$ 22,00</td></tr>
+                    <tr><th>Cold Brew</th><td>R$ 16,00</td><td>R$ 19,00</td><td>R$ 21,00</td></tr>
+                    <tr><th>Frappé de Banana</th><td>R$ 21,00</td><td>R$ 24,00</td><td>R$ 26,00</td></tr>
+                    <tr><th>Espresso Gelado</th><td>R$ 17,00</td><td>R$ 20,00</td><td>R$ 22,00</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="fim-pagina"><a href="pedido.html" class="btn btn-dark">Ir para o pedido</a></p>
+
+    </main>
+
+    <p class="aviso-flutuante" id="aviso-flutuante" hidden></p>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-colunas">
+                <div>
+                    <h2>Moka Cafés</h2>
+                    <p>Café, bebidas geladas e padaria. Peça na loja ou receba em casa.</p>
+                </div>
+                <div>
+                    <h2>Navegue</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="pedido.html">Pedido</a></li>
+                        <li><a href="loja.html">Nossa loja</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Horário</h2>
+                    <p>Seg a sex: 7h às 21h<br>Sáb e dom: 8h às 20h</p>
+                </div>
+            </div>
+            <p class="text-center small">&copy; <span class="ano-atual">2026</span> Moka Cafés · Projeto acadêmico - Universidade Positivo · Camilly Victoria Ribeiro Pepplow Lopes · Fotos e vídeo: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comum.js"></script>
+    <script src="js/cardapio.js"></script>
+</body>
+</html>

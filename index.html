@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- Moka - Inicio -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Moka Cafés: cardápio, pedidos e delivery de café.">
+    <meta name="author" content="Camilly Victoria Ribeiro Pepplow Lopes">
+    <title>Início | Moka Cafés</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tema.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-moka">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="img/logo-moka.svg" alt="" width="34" height="34"><span>moka</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cardapio.html">Cardápio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pedido.html">Pedido <span id="contador-sacola">0</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="loja.html">Nossa loja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.5)), url('img/hero-fundo.jpg');">
+        <div class="container">
+            <div class="texto-hero">
+                <h1>Peça seu café pelo site</h1>
+                <p>Cafés, bebidas geladas e padaria. Monte seu pedido e receba em casa em 30 a 45 minutos, ou retire na loja.</p>
+                <a href="cardapio.html" class="btn btn-light btn-lg">Pedir agora</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container py-5">
+
+        <h2 class="titulo-secao">Como funciona o delivery</h2>
+        <div class="grade">
+            <div>
+                <div class="card card-moka">
+                    <div class="card-body">
+                        <h3>1. Escolha</h3>
+                        <p>Navegue pelo cardápio, escolha o tamanho da bebida e adicione ao pedido.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card card-moka">
+                    <div class="card-body">
+                        <h3>2. Confirme</h3>
+                        <p>Informe o endereço e escolha a forma de pagamento.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card card-moka">
+                    <div class="card-body">
+                        <h3>3. Receba</h3>
+                        <p>Preparamos o pedido e entregamos em 30 a 45 minutos, ou você retira na loja.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="titulo-secao">Mais pedidos</h2>
+        <div class="grade">
+            <div>
+                <article class="card card-moka">
+                    <img src="img/cappuccino.jpg" class="card-img-top" alt="Cappuccino">
+                    <div class="card-body">
+                        <h3 class="card-title">Cappuccino</h3>
+                        <p class="card-text">Espresso com leite vaporizado e espuma.</p>
+                        <p class="preco">a partir de R$ 14,00</p>
+                        <a href="cardapio.html" class="btn btn-dark btn-sm">Ver no cardápio</a>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="card card-moka">
+                    <img src="img/cold-brew.jpg" class="card-img-top" alt="Cold Brew">
+                    <div class="card-body">
+                        <h3 class="card-title">Cold Brew</h3>
+                        <p class="card-text">Café coado a frio, servido com gelo.</p>
+                        <p class="preco">a partir de R$ 16,00</p>
+                        <a href="cardapio.html" class="btn btn-dark btn-sm">Ver no cardápio</a>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <article class="card card-moka">
+                    <img src="img/croissant.jpg" class="card-img-top" alt="Croissant de Manteiga">
+                    <div class="card-body">
+                        <h3 class="card-title">Croissant de Manteiga</h3>
+                        <p class="card-text">Croissant de manteiga, crocante por fora e macio por dentro.</p>
+                        <p class="preco">R$ 11,00</p>
+                        <a href="cardapio.html" class="btn btn-dark btn-sm">Ver no cardápio</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <h2 class="titulo-secao">Perguntas frequentes</h2>
+        <div class="accordion" id="perguntas">
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta1">Qual a área de entrega?</button>
+                </h3>
+                <div id="pergunta1" class="accordion-collapse collapse show" data-bs-parent="#perguntas">
+                    <div class="accordion-body">Entregamos no Centro, Batel, Água Verde, Portão e Santa Felicidade, com taxa por bairro informada no pedido.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta2">Quanto tempo leva a entrega?</button>
+                </h3>
+                <div id="pergunta2" class="accordion-collapse collapse" data-bs-parent="#perguntas">
+                    <div class="accordion-body">De 30 a 45 minutos, dependendo do bairro.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pergunta3">Posso retirar na loja?</button>
+                </h3>
+                <div id="pergunta3" class="accordion-collapse collapse" data-bs-parent="#perguntas">
+                    <div class="accordion-body">Sim. Escolha a opção Retirada na loja ao finalizar o pedido. Não tem taxa de entrega.</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="rodape-colunas">
+                <div>
+                    <h2>Moka Cafés</h2>
+                    <p>Café, bebidas geladas e padaria. Peça na loja ou receba em casa.</p>
+                </div>
+                <div>
+                    <h2>Navegue</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="cardapio.html">Cardápio</a></li>
+                        <li><a href="pedido.html">Pedido</a></li>
+                        <li><a href="loja.html">Nossa loja</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Horário</h2>
+                    <p>Seg a sex: 7h às 21h<br>Sáb e dom: 8h às 20h</p>
+                </div>
+            </div>
+            <p class="text-center small">&copy; <span class="ano-atual">2026</span> Moka Cafés · Projeto acadêmico - Universidade Positivo · Camilly Victoria Ribeiro Pepplow Lopes · Fotos e vídeo: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/comum.js"></script>
+</body>
+</html>
